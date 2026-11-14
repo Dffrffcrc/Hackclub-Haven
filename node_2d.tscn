@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=21 format=3 uid="uid://c4hqhd6lw12bs"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
 [ext_resource type="Script" path="res://player_script.gd" id="1_kwgtl"]
-[ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://red_ball.png" id="3_tu2t4"]
+[ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://Assets/red_ball.png" id="3_tu2t4"]
+[ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="5_notpk"]
+[ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="6_mesac"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
 friction = 0.0
@@ -50,17 +52,6 @@ size = Vector2(300, 12)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_gv6ur")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Scores" type="Label" parent="CanvasLayer"]
-texture_filter = 5
-offset_left = 578.0
-offset_top = 295.0
-offset_right = 618.0
-offset_bottom = 318.0
-text = "Player 1 Score: 
-Player 2 Score: "
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -114,89 +105,120 @@ texture = SubResource("CompressedTexture2D_qqyse")
 
 [node name="AimArrow" type="Line2D" parent="Node2D/Player1"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(0, 74)
 scale = Vector2(2.56, 1.00926)
 physics_material_override = SubResource("PhysicsMaterial_fgslq")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D"]
 position = Vector2(7.61719, 251)
 shape = SubResource("RectangleShape2D_tatxr")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 physics_material_override = SubResource("PhysicsMaterial_mkkka")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D2"]
 position = Vector2(577, 20)
 shape = SubResource("RectangleShape2D_egcwm")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 physics_material_override = SubResource("PhysicsMaterial_wa8ng")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D3"]
 position = Vector2(579.5, 628.5)
 shape = SubResource("RectangleShape2D_wdft4")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 physics_material_override = SubResource("PhysicsMaterial_xbnie")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D4"]
 position = Vector2(1132, 326.5)
 shape = SubResource("RectangleShape2D_lyadq")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D5" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D5"]
 position = Vector2(338, 327)
 shape = SubResource("RectangleShape2D_etmu1")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D6" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(522, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D6"]
 position = Vector2(338, 327)
 shape = SubResource("RectangleShape2D_etmu1")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D7" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D7"]
 position = Vector2(611, 512)
 shape = SubResource("RectangleShape2D_cew0r")
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="Node2D"]
+[node name="StaticBody2D8" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(-1, -376)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D8"]
 position = Vector2(611, 512)
 shape = SubResource("RectangleShape2D_cew0r")
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+[node name="StaticBody2D9" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D9"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D9"]
 polygon = PackedVector2Array(515, 214, 446, 273, 446, 388, 507, 441, 698, 441, 760, 388, 760, 272, 691, 215)
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+[node name="StaticBody2D10" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D10"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D10"]
 polygon = PackedVector2Array(85, 149, 85, 169, 106, 169, 222, 72, 223, 52, 200, 51)
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+[node name="StaticBody2D11" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D11"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D11"]
 position = Vector2(841, 425)
 polygon = PackedVector2Array(85, 149, 85, 169, 106, 169, 222, 72, 223, 52, 200, 51)
 
-[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+[node name="StaticBody2D12" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D12"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D12"]
 polygon = PackedVector2Array(108, 467, 108, 485, 223, 582, 246, 583, 246, 564, 130, 466)
 
-[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+[node name="StaticBody2D13" type="StaticBody2D" parent="CanvasLayer"]
+visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D13"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D13"]
 position = Vector2(809, -412)
 polygon = PackedVector2Array(108, 467, 108, 485, 223, 582, 246, 583, 246, 564, 130, 466)
+
+[node name="P1Score" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 533.0
+offset_top = 265.0
+offset_right = 599.0
+offset_bottom = 371.0
+texture = ExtResource("5_notpk")
+
+[node name="P2Score" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 612.0
+offset_top = 265.0
+offset_right = 678.0
+offset_bottom = 371.0
+texture = ExtResource("6_mesac")
