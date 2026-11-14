@@ -1,44 +1,49 @@
 extends RigidBody2D
 
-@export var launch_power: float = 5.0
+@export var launch_power: float = 20.0
+@export var max_arrow_length: float = 300.0 # Caps how long the line can stretch
 
+@onready var aim_arrow: Line2D = $AimArrow
+@onready var Sprite
 var drag_start: Vector2 = Vector2.ZERO
 var is_dragging: bool = false
 
 func _ready() -> void:
 	freeze = true
+	aim_arrow.position = $Sprite2D.position
+	lock_rotation = true
 
-# This triggers when clicking directly on the ball's collision shape
-func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if (event is InputEventScreenTouch and event.pressed) or \
-	   (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
-		# Capture the ball's actual current world position right when clicked
-		drag_start = global_position 
-		is_dragging = true
-		print("Drag Started at: ", drag_start)
+	# Ensure the Line2D starts hidden and has 2 points ready
+	aim_arrow.visible = false
+	aim_arrow.clear_points()
+	aim_arrow.add_point(Vector2.ZERO) # Point 0: Center of the RigidBody2D
+	aim_arrow.add_point(Vector2.ZERO) # Point 1: Tip of the aim line
 
 func _input(event: InputEvent) -> void:
-	if is_dragging:
-		if event is InputEventScreenDrag or event is InputEventMouseMotion:
-			var current_mouse: Vector2 = get_global_mouse_position()
-			print("Current Mouse: ", current_mouse)
+	if (event is InputEventScreenTouch and event.pressed) or \
+	   (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed):
+		drag_start = event.position
+		is_dragging = true
+		
+		# Reset tip to center and show the line
+		aim_arrow.set_point_position(1, Vector2.ZERO)
+		aim_arrow.visible = true
 
-		elif (event is InputEventScreenTouch and not event.pressed) or \
-			 (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed):
-			is_dragging = false
-			
-			var end_pos: Vector2 = get_global_mouse_position()
-			launch(drag_start, end_pos)
+	elif is_dragging and (event is InputEventScreenDrag or event is InputEventMouseMotion):
+		var current_coords: Vector2 = event.position
+		var drag_vector: Vector2 = drag_start - current_coords
+		var arrow_end: Vector2 = drag_vector.limit_length(max_arrow_length)
+		aim_arrow.set_point_position(1, arrow_end)
+
+	elif is_dragging and ((event is InputEventScreenTouch and not event.pressed) or \
+		 (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed)):
+		aim_arrow.position = $Sprite2D.position
+		is_dragging = false
+		aim_arrow.visible = false # Hide the arrow once launched
+		launch(drag_start, event.position)
 
 func launch(start_pos: Vector2, end_pos: Vector2) -> void:
-	# If you want it to launch AWAY from where you pull (classic slingshot style):
 	var drag_vector: Vector2 = start_pos - end_pos
-	
-	# If you want it to launch TOWARD where you drag instead, uncomment the line below:
-	# var drag_vector: Vector2 = end_pos - start_pos
-	
-	print("--- LAUNCHED ---")
-	print("Drag Vector: ", drag_vector)
 	
 	freeze = false
 	apply_central_impulse(drag_vector * launch_power)

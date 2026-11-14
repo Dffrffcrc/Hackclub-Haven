@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=7 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_kwgtl"]
@@ -8,6 +8,9 @@
 size = Vector2(576, 324)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cc7gq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
+bounce = 3.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -38,7 +41,9 @@ debug_color = Color(1, 1, 1, 1)
 [node name="Player2" type="RigidBody2D" parent="."]
 input_pickable = true
 mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_xx3rc")
 gravity_scale = 0.0
+linear_damp = 1.0
 script = ExtResource("1_kwgtl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
@@ -51,3 +56,5 @@ debug_color = Color(1, 1, 1, 1)
 position = Vector2(406, 325)
 scale = Vector2(0.30664, 0.30664)
 texture = ExtResource("3_1aaeq")
+
+[node name="AimArrow" type="Line2D" parent="Player2"]
