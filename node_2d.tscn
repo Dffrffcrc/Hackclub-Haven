@@ -45,6 +45,7 @@ input_pickable = true
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_xx3rc")
 gravity_scale = 0.0
+contact_monitor = true
 linear_damp = 1.0
 script = ExtResource("1_kwgtl")
 
@@ -66,6 +67,7 @@ input_pickable = true
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_xx3rc")
 gravity_scale = 0.0
+contact_monitor = true
 linear_damp = 1.0
 script = ExtResource("1_kwgtl")
 
