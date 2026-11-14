@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 signal turn_finished
-
+signal collided(body: Node)
 @export var launch_power: float = 20.0
 @export var max_arrow_length: float = 300.0
 @export var stop_threshold: float = 20 # Speed below which the ball counts as stopped
@@ -12,8 +12,10 @@ var drag_start: Vector2 = Vector2.ZERO
 var is_dragging: bool = false
 var can_drag: bool = false
 var is_moving: bool = false
-
+ 
 func _ready() -> void:
+	contact_monitor = true  
+	max_contacts_reported = 5
 	freeze = true
 	aim_arrow.position = $Sprite2D.position
 	lock_rotation = true
@@ -21,7 +23,11 @@ func _ready() -> void:
 	aim_arrow.clear_points()
 	aim_arrow.add_point(Vector2.ZERO)
 	aim_arrow.add_point(Vector2.ZERO)
-
+	body_entered.connect(_on_body_entered)
+func _on_body_entered(body: Node) -> void:
+	print("Collided")
+	collided.emit(body)
+	
 func _physics_process(_delta: float) -> void:
 	if not is_moving:
 		return
