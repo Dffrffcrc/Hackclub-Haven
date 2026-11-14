@@ -2,7 +2,7 @@ extends RigidBody2D
 
 signal turn_finished
 signal collided(body: Node)
-@export var launch_power: float = 20.0
+@export var launch_power: float = 40.0
 @export var max_arrow_length: float = 300.0
 @export var stop_threshold: float = 20 # Speed below which the ball counts as stopped
 var has_launched: bool = false
@@ -12,7 +12,7 @@ var drag_start: Vector2 = Vector2.ZERO
 var is_dragging: bool = false
 var can_drag: bool = false
 var is_moving: bool = false
- 
+
 func _ready() -> void:
 	contact_monitor = true  
 	max_contacts_reported = 5
