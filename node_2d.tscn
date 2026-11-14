@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=13 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
 [ext_resource type="Script" path="res://player_script.gd" id="1_kwgtl"]
 [ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://red_ball.png" id="3_tu2t4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y073v"]
-size = Vector2(576, 324)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
 bounce = 3.0
@@ -20,24 +17,26 @@ radius = 16.0078
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qqyse"]
 load_path = "res://.godot/imported/blue_ball.png-b6ff7a518571bac74893fdcc609699d1.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tatxr"]
+size = Vector2(14.4531, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egcwm"]
+size = Vector2(1152, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdft4"]
+size = Vector2(1143, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyadq"]
+size = Vector2(38, 643)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gv6ur")
 
-[node name="Background" type="StaticBody2D" parent="."]
-texture_filter = 1
-
-[node name="TextureRect" type="TextureRect" parent="Background"]
+[node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_1pvmu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
-position = Vector2(576, 324)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_y073v")
-disabled = true
-debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Player2" type="RigidBody2D" parent="."]
 position = Vector2(110, 320)
@@ -80,3 +79,29 @@ scale = Vector2(8, 8)
 texture = SubResource("CompressedTexture2D_qqyse")
 
 [node name="AimArrow" type="Line2D" parent="Player1"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 74)
+scale = Vector2(2.56, 1.00926)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7.61719, 251)
+shape = SubResource("RectangleShape2D_tatxr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(577, 20)
+shape = SubResource("RectangleShape2D_egcwm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(579.5, 628.5)
+shape = SubResource("RectangleShape2D_wdft4")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1132, 326.5)
+shape = SubResource("RectangleShape2D_lyadq")
