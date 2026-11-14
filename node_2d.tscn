@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=17 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://red_ball.png" id="3_tu2t4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
+friction = 0.0
 bounce = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cc7gq"]
@@ -17,14 +18,26 @@ radius = 16.0078
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qqyse"]
 load_path = "res://.godot/imported/blue_ball.png-b6ff7a518571bac74893fdcc609699d1.ctex"
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fgslq"]
+friction = 0.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tatxr"]
 size = Vector2(14.4531, 648)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mkkka"]
+friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egcwm"]
 size = Vector2(1152, 40)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wa8ng"]
+friction = 0.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdft4"]
 size = Vector2(1143, 37)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xbnie"]
+friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyadq"]
 size = Vector2(38, 643)
@@ -85,24 +98,28 @@ texture = SubResource("CompressedTexture2D_qqyse")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 74)
 scale = Vector2(2.56, 1.00926)
+physics_material_override = SubResource("PhysicsMaterial_fgslq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(7.61719, 251)
 shape = SubResource("RectangleShape2D_tatxr")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_mkkka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(577, 20)
 shape = SubResource("RectangleShape2D_egcwm")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_wa8ng")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(579.5, 628.5)
 shape = SubResource("RectangleShape2D_wdft4")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_xbnie")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(1132, 326.5)
