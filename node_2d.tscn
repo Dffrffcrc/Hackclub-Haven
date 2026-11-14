@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://byilkgdbb2srd"]
+
+[ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
+[ext_resource type="Script" path="res://player_2.gd" id="1_kwgtl"]
+[ext_resource type="Texture2D" uid="uid://10cbe32ttwm" path="res://icon.svg" id="3_1aaeq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y073v"]
+size = Vector2(576, 324)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cc7gq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="StaticBody2D" parent="."]
+texture_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_1pvmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background"]
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_y073v")
+disabled = true
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Player1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+position = Vector2(490, 181)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_cc7gq")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Player2" type="RigidBody2D" parent="."]
+input_pickable = true
+mass = 10.0
+gravity_scale = 0.0
+script = ExtResource("1_kwgtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(406, 325)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_cc7gq")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+position = Vector2(406, 325)
+scale = Vector2(0.30664, 0.30664)
+texture = ExtResource("3_1aaeq")
