@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=19 format=3 uid="uid://c4hqhd6lw12bs"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
@@ -104,32 +104,32 @@ texture = SubResource("CompressedTexture2D_qqyse")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 74)
 scale = Vector2(2.56, 1.00926)
-metadata/_edit_group_ = true
 physics_material_override = SubResource("PhysicsMaterial_fgslq")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(7.61719, 251)
 shape = SubResource("RectangleShape2D_tatxr")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-metadata/_edit_group_ = true
 physics_material_override = SubResource("PhysicsMaterial_mkkka")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(577, 20)
 shape = SubResource("RectangleShape2D_egcwm")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-metadata/_edit_group_ = true
 physics_material_override = SubResource("PhysicsMaterial_wa8ng")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(579.5, 628.5)
 shape = SubResource("RectangleShape2D_wdft4")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-metadata/_edit_group_ = true
 physics_material_override = SubResource("PhysicsMaterial_xbnie")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(1132, 326.5)
