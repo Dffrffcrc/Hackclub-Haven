@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_kwgtl"]
-[ext_resource type="Texture2D" uid="uid://10cbe32ttwm" path="res://icon.svg" id="3_1aaeq"]
+[ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://rainbowballs.png" id="3_tu2t4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y073v"]
 size = Vector2(576, 324)
@@ -39,6 +39,7 @@ shape = SubResource("CircleShape2D_cc7gq")
 debug_color = Color(1, 1, 1, 1)
 
 [node name="Player2" type="RigidBody2D" parent="."]
+position = Vector2(110, 320)
 input_pickable = true
 mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_xx3rc")
@@ -47,14 +48,13 @@ linear_damp = 1.0
 script = ExtResource("1_kwgtl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
-position = Vector2(406, 325)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_cc7gq")
 debug_color = Color(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player2"]
-position = Vector2(406, 325)
-scale = Vector2(0.30664, 0.30664)
-texture = ExtResource("3_1aaeq")
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("3_tu2t4")
 
 [node name="AimArrow" type="Line2D" parent="Player2"]
