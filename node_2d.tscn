@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4hqhd6lw12bs"]
+[gd_scene load_steps=19 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
@@ -48,16 +48,29 @@ size = Vector2(16, 214)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cew0r"]
 size = Vector2(300, 12)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node" type="Node"]
 script = ExtResource("1_gv6ur")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Scores" type="Label" parent="CanvasLayer"]
+texture_filter = 5
+offset_left = 578.0
+offset_top = 295.0
+offset_right = 618.0
+offset_bottom = 318.0
+text = "Player 1 Score: 
+Player 2 Score: "
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
 texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_1pvmu")
 
-[node name="Player2" type="RigidBody2D" parent="."]
+[node name="Player2" type="RigidBody2D" parent="Node2D"]
 position = Vector2(110, 320)
 input_pickable = true
 mass = 10.0
@@ -67,19 +80,19 @@ contact_monitor = true
 linear_damp = 1.0
 script = ExtResource("1_kwgtl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player2"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_cc7gq")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Player2"]
 texture_filter = 1
 scale = Vector2(8, 8)
 texture = ExtResource("3_tu2t4")
 
-[node name="AimArrow" type="Line2D" parent="Player2"]
+[node name="AimArrow" type="Line2D" parent="Node2D/Player2"]
 
-[node name="Player1" type="RigidBody2D" parent="."]
+[node name="Player1" type="RigidBody2D" parent="Node2D"]
 position = Vector2(1050, 320)
 input_pickable = true
 mass = 10.0
@@ -89,75 +102,75 @@ contact_monitor = true
 linear_damp = 1.0
 script = ExtResource("1_kwgtl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player1"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_lc0lt")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Player1"]
 texture_filter = 1
 scale = Vector2(8, 8)
 texture = SubResource("CompressedTexture2D_qqyse")
 
-[node name="AimArrow" type="Line2D" parent="Player1"]
+[node name="AimArrow" type="Line2D" parent="Node2D/Player1"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
 position = Vector2(0, 74)
 scale = Vector2(2.56, 1.00926)
 physics_material_override = SubResource("PhysicsMaterial_fgslq")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
 position = Vector2(7.61719, 251)
 shape = SubResource("RectangleShape2D_tatxr")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D"]
 physics_material_override = SubResource("PhysicsMaterial_mkkka")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D2"]
 position = Vector2(577, 20)
 shape = SubResource("RectangleShape2D_egcwm")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D"]
 physics_material_override = SubResource("PhysicsMaterial_wa8ng")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D3"]
 position = Vector2(579.5, 628.5)
 shape = SubResource("RectangleShape2D_wdft4")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D"]
 physics_material_override = SubResource("PhysicsMaterial_xbnie")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D4"]
 position = Vector2(1132, 326.5)
 shape = SubResource("RectangleShape2D_lyadq")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+[node name="StaticBody2D5" type="StaticBody2D" parent="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D5"]
 position = Vector2(338, 327)
 shape = SubResource("RectangleShape2D_etmu1")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+[node name="StaticBody2D6" type="StaticBody2D" parent="Node2D"]
 position = Vector2(522, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D6"]
 position = Vector2(338, 327)
 shape = SubResource("RectangleShape2D_etmu1")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+[node name="StaticBody2D7" type="StaticBody2D" parent="Node2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D7"]
 position = Vector2(611, 512)
 shape = SubResource("RectangleShape2D_cew0r")
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+[node name="StaticBody2D8" type="StaticBody2D" parent="Node2D"]
 position = Vector2(-1, -376)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D8"]
 position = Vector2(611, 512)
 shape = SubResource("RectangleShape2D_cew0r")
 

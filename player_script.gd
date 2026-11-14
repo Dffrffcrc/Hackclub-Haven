@@ -7,7 +7,7 @@ signal collided(body: Node)
 @export var stop_threshold: float = 20 # Speed below which the ball counts as stopped
 var has_launched: bool = false
 @onready var aim_arrow: Line2D = $AimArrow
-
+@export var min_drag_distance: float = 15.0
 var drag_start: Vector2 = Vector2.ZERO
 var is_dragging: bool = false
 var can_drag: bool = false
@@ -70,11 +70,18 @@ func _input(event: InputEvent) -> void:
 		aim_arrow.position = $Sprite2D.position
 		is_dragging = false
 		can_drag = false # Lock dragging immediately once shot
+		
 		aim_arrow.visible = false
 		launch(drag_start, event.position)
 
 func launch(start_pos: Vector2, end_pos: Vector2) -> void:
 	var drag_vector: Vector2 = start_pos - end_pos
+
+	if drag_vector.length() < min_drag_distance:
+		can_drag = true
+		return
+
+	print(drag_vector)
 	freeze = false
 	is_moving = true
-	apply_central_impulse(drag_vector * launch_power)
+	apply_central_impulse(drag_vector.limit_length(max_arrow_length) * launch_power)
