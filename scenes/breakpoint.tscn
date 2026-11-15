@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://darxgggbgn8py"]
+
+[ext_resource type="Texture2D" uid="uid://ykw8wxl0xyyr" path="res://duality.png" id="1_bd3bf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc6u3"]
+size = Vector2(1150, 40)
+
+[node name="breakpoint" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D"]
+position = Vector2(575, 19)
+shape = SubResource("RectangleShape2D_jc6u3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D2"]
+polygon = PackedVector2Array(-1, 640, 1152, 642, 1151, 606, 0, 605)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D3"]
+polygon = PackedVector2Array(-1, 641, 36, 641, 38, 2, -1, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D4"]
+polygon = PackedVector2Array(1110, 1, 1112, 642, 1153, 642, 1151, -4)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1149.0
+offset_bottom = 642.0
+texture = ExtResource("1_bd3bf")
