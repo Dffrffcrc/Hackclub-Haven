@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://br13bfga3cm8n"]
+[gd_scene load_steps=11 format=3 uid="uid://br13bfga3cm8n"]
 
 [ext_resource type="Script" path="res://scripts/home.gd" id="1_2s776"]
 [ext_resource type="Texture2D" uid="uid://blsew7em5eu2w" path="res://Assets/homescreenBg.png" id="2_a0ge0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gjq6mkwlc444" path="res://Assets/crossfireMenu.png" id="7_6161w"]
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://Assets/crossfire.png" id="8_517en"]
 [ext_resource type="AudioStream" uid="uid://cru7w38pk7v35" path="res://Assets/retro_music.mp3" id="9_crayq"]
+[ext_resource type="Texture2D" uid="uid://dfkgdxo35m0hy" path="res://scripts/pixil-frame-0-5 Background Removed.png" id="9_vpp7k"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -77,6 +78,16 @@ texture_filter = 1
 position = Vector2(45.75, 32.25)
 scale = Vector2(0.4, 0.313)
 texture = ExtResource("8_517en")
+
+[node name="TextureButton" type="TextureButton" parent="background"]
+layout_mode = 0
+offset_left = -31.0
+offset_top = 457.0
+offset_right = 299.0
+offset_bottom = 734.0
+texture_normal = ExtResource("9_vpp7k")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_crayq")
