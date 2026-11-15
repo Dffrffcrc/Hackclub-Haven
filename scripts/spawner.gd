@@ -43,6 +43,7 @@ func spawn_dice() -> void:
 			dice_instance.global_position = random_pos
 			dice_instance.z_index = 1 
 			get_parent().add_child(dice_instance)
+			dice_instance.add_to_group("dice")
 			return
 
 	dice_instance.queue_free()

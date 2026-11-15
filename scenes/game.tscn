@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=15 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Script" path="res://scripts/turn_manager.gd" id="1_e04a6"]
 [ext_resource type="Script" path="res://scripts/player_script.gd" id="3_4n42g"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="8_fhw7n"]
 [ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="9_xarv4"]
 [ext_resource type="Texture2D" uid="uid://bd3yevcg4mdw6" path="res://Assets/resetBtn.png" id="10_nggyt"]
+[ext_resource type="PackedScene" uid="uid://dsn5tju4cg230" path="res://scenes/item_spawner.tscn" id="10_woyj2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
 friction = 0.0
@@ -116,3 +117,5 @@ volume_db = 18.0
 [node name="RevealSound" type="AudioStreamPlayer" parent="Node2D"]
 stream = ExtResource("7_mmqw7")
 volume_db = 24.0
+
+[node name="ItemSpawner" parent="." instance=ExtResource("10_woyj2")]

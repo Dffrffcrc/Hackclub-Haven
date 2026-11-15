@@ -1,10 +1,9 @@
 extends Node
-
+@onready var spawn_timer: Timer = $ItemSpawner/SpawnTimer
 @onready var player1: RigidBody2D = $Node2D/Player1
 @onready var player2: RigidBody2D = $Node2D/Player2
 @onready var p1_score_rect: TextureRect = $CanvasLayer/P1Score
 @onready var p2_score_rect: TextureRect = $CanvasLayer/P2Score
-@onready var texture_rect: TextureRect = $Node2D/TextureRect
 @onready var reset_btn: TextureButton = $CanvasLayer/ResetBtn
 @onready var timer_label: Label = $CanvasLayer/TimerLabel
 @onready var bounce_audio: AudioStreamPlayer2D = $Node2D/BounceAudio
@@ -14,14 +13,16 @@ extends Node
 var current_turn: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
-var time_left: float = 90.0
-
+var time_left: float = 30.0
+var texture_rect: TextureRect
 func _ready() -> void:
 	if Global.selected_map_path != "":
 		var map_scene: PackedScene = load(Global.selected_map_path)
 		var map_instance: Node = map_scene.instantiate()
+		map_instance.name = "CurrentMap"
 		game_world.add_child(map_instance)
 		game_world.move_child(map_instance, 0)
+		texture_rect = map_instance.get_node("TextureRect")
 	player1.turn_finished.connect(_on_turn_finished)
 	player2.turn_finished.connect(_on_turn_finished)
 	player1.collided.connect(_on_collision)
@@ -69,6 +70,8 @@ func _update_score_display() -> void:
 	if player1_score >= 10 or player2_score >= 10 or time_left <= 0.0:
 		set_process(false)
 		tag_sound.stop()
+		spawn_timer.stop()
+		get_tree().call_group("dice", "queue_free")
 		bounce_audio.stop()
 		if player1_score > player2_score:
 			texture_rect.texture = load("res://Assets/scores/redWinEndscreen.png")
