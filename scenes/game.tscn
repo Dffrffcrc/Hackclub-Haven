@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://Assets/red_ball.png" id="4_3v3ih"]
 [ext_resource type="AudioStream" uid="uid://bhkhq04an0f5v" path="res://Assets/audio/cong.mp3" id="5_fyci0"]
 [ext_resource type="AudioStream" uid="uid://dsp4hqeh442b" path="res://Assets/audio/windows-95-ding-sound.mp3" id="6_6iwo1"]
+[ext_resource type="Texture2D" uid="uid://2gd7io8og3pq" path="res://Assets/blue_ball.png" id="7_cpj2g"]
 [ext_resource type="AudioStream" uid="uid://b2ypnc1nheyrk" path="res://Assets/audio/among-us-role-reveal-sound.mp3" id="7_mmqw7"]
 [ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="8_fhw7n"]
 [ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="9_xarv4"]
@@ -20,9 +21,6 @@ radius = 16.0078
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lc0lt"]
 radius = 16.0078
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qqyse"]
-load_path = "res://.godot/imported/blue_ball.png-b6ff7a518571bac74893fdcc609699d1.ctex"
 
 [node name="Node" type="Node"]
 script = ExtResource("1_e04a6")
@@ -102,7 +100,7 @@ debug_color = Color(1, 1, 1, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Player1"]
 texture_filter = 1
 scale = Vector2(8, 8)
-texture = SubResource("CompressedTexture2D_qqyse")
+texture = ExtResource("7_cpj2g")
 
 [node name="AimArrow" type="Line2D" parent="Node2D/Player1"]
 

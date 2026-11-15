@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt7snmbaloigv"]
+
+[ext_resource type="Texture2D" uid="uid://x5lhu61nx5j4" path="res://Assets/breakpoint.png" id="1_vgxmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abs0l"]
+size = Vector2(38, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5dy7"]
+size = Vector2(211, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u12ws"]
+size = Vector2(1166, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hemph"]
+size = Vector2(8, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rw40"]
+size = Vector2(10, 191)
+
+[node name="duality" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D"]
+polygon = PackedVector2Array(265, 136, 265, 181, 304, 204, 343, 204, 383, 181, 383, 137, 346, 114, 304, 114)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="CanvasLayer"]
+position = Vector2(1151, 319)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D4"]
+position = Vector2(-1132, 4.5)
+shape = SubResource("RectangleShape2D_abs0l")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D2"]
+polygon = PackedVector2Array(592, 75, 632, 75, 679, 96, 690, 134, 671, 177, 632, 190, 595, 191, 546, 172, 534, 134, 546, 96)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D3"]
+position = Vector2(1151, 319)
+shape = SubResource("RectangleShape2D_abs0l")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D5"]
+position = Vector2(237.5, 518)
+shape = SubResource("RectangleShape2D_q5dy7")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D6"]
+polygon = PackedVector2Array(943, 472, 983, 472, 1020, 497, 1026, 526, 1011, 554, 986, 566, 942, 566, 907, 544, 898, 519, 911, 493)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D7"]
+position = Vector2(964, 136)
+shape = SubResource("RectangleShape2D_q5dy7")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D8"]
+position = Vector2(585, 19.5)
+shape = SubResource("RectangleShape2D_u12ws")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D9"]
+position = Vector2(589, 628)
+shape = SubResource("RectangleShape2D_u12ws")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D10"]
+polygon = PackedVector2Array(462, 264, 523, 212, 703, 213, 763, 265, 716, 265, 676, 233, 544, 233, 507, 266)
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D15"]
+polygon = PackedVector2Array(468, 395, 508, 395, 537, 419, 684, 421, 717, 394, 762, 395, 709, 440, 513, 439, 464, 397)
+
+[node name="bottomRightObstacle4" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/bottomRightObstacle4"]
+position = Vector2(604, 327)
+shape = SubResource("RectangleShape2D_hemph")
+
+[node name="bottomRightObstacle3" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/bottomRightObstacle3"]
+polygon = PackedVector2Array(273, 485, 351, 485, 351, 544, 344, 544, 343, 492, 273, 492, 273, 486)
+
+[node name="bottomRightObstacle2" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/bottomRightObstacle2"]
+polygon = PackedVector2Array(850, 110, 858, 110, 858, 162, 928, 162, 928, 169, 850, 168)
+
+[node name="bottomRightObstacle" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/bottomRightObstacle"]
+position = Vector2(627, 325.5)
+shape = SubResource("RectangleShape2D_0rw40")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1170.0
+offset_bottom = 647.0
+texture = ExtResource("1_vgxmj")
