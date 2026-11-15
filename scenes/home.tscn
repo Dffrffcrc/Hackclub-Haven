@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://br13bfga3cm8n"]
+
+[ext_resource type="Script" path="res://scripts/home.gd" id="1_2s776"]
+[ext_resource type="Texture2D" uid="uid://blsew7em5eu2w" path="res://Assets/homescreenBg.png" id="2_a0ge0"]
+[ext_resource type="Texture2D" uid="uid://cqwpy06syvbuo" path="res://Assets/breakpointMenu.png" id="3_pv6oh"]
+[ext_resource type="Texture2D" uid="uid://s26nb7aanl0k" path="res://Assets/breakpoint.jpeg" id="4_vcihi"]
+[ext_resource type="Texture2D" uid="uid://l3ubefo86i08" path="res://Assets/dualityMenu.png" id="5_suqe3"]
+[ext_resource type="Texture2D" uid="uid://cgmlbxh1fkdbm" path="res://Assets/duality.jpeg" id="6_r5gtg"]
+[ext_resource type="Texture2D" uid="uid://gjq6mkwlc444" path="res://Assets/crossfireMenu.png" id="7_6161w"]
+[ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://Assets/crossfire.png" id="8_517en"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2s776")
+
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 644.0
+texture = ExtResource("2_a0ge0")
+
+[node name="breakpointButton" type="TextureButton" parent="background"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -57.0
+offset_top = 191.0
+offset_right = 503.0
+offset_bottom = 573.0
+texture_normal = ExtResource("3_pv6oh")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Breakpoint" type="Sprite2D" parent="background/breakpointButton"]
+texture_filter = 1
+position = Vector2(278, 191)
+scale = Vector2(1.56, 1.26)
+texture = ExtResource("4_vcihi")
+
+[node name="dualityButton" type="TextureButton" parent="background"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 372.0
+offset_top = 188.0
+offset_right = 763.0
+offset_bottom = 576.0
+texture_normal = ExtResource("5_suqe3")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="Duality" type="Sprite2D" parent="background/dualityButton"]
+texture_filter = 1
+position = Vector2(197, 196)
+scale = Vector2(1.55333, 1.26)
+texture = ExtResource("6_r5gtg")
+
+[node name="crossfireButton" type="TextureButton" parent="background"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 565.0
+offset_top = 188.0
+offset_right = 1283.0
+offset_bottom = 579.0
+texture_normal = ExtResource("7_6161w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Crossfire" type="Sprite2D" parent="background/crossfireButton"]
+texture_filter = 1
+position = Vector2(360, 196)
+scale = Vector2(1.58667, 1.24)
+texture = ExtResource("8_517en")
+metadata/_edit_group_ = true
