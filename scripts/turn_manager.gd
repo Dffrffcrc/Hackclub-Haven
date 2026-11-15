@@ -26,7 +26,7 @@ func _ready() -> void:
 	player2.turn_finished.connect(_on_turn_finished)
 	player1.collided.connect(_on_collision)
 	player2.collided.connect(_on_collision)
-	reset_btn.pressed.connect(get_tree().reload_current_scene)
+	reset_btn.pressed.connect(get_tree().change_scene_to_file.bind("res://scenes/home.tscn"))
 	reset_btn.hide()
 	_update_score_display()
 	start_turn(1)
