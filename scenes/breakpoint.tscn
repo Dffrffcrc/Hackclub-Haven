@@ -32,21 +32,48 @@ polygon = PackedVector2Array(1110, 1, 1112, 642, 1153, 642, 1151, -4)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="CanvasLayer"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D5"]
+polygon = PackedVector2Array(267, 39, 268, 152, 384, 152, 384, 142, 282, 140, 282, 38)
+
 [node name="StaticBody2D6" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D6"]
+polygon = PackedVector2Array(613, 38, 614, 129, 627, 129, 629, 39)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="CanvasLayer"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D7"]
+polygon = PackedVector2Array(790, 92, 790, 198, 936, 197, 935, 91)
+
 [node name="StaticBody2D8" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D8"]
+polygon = PackedVector2Array(108, 456, 109, 537, 199, 539, 198, 454)
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="CanvasLayer"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D9"]
+polygon = PackedVector2Array(765, 559, 1021, 448, 1050, 448, 1050, 570, 767, 572)
+
 [node name="StaticBody2D10" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D10"]
+polygon = PackedVector2Array(266, 603, 265, 487, 384, 486, 384, 503, 284, 503, 285, 604)
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="CanvasLayer"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D11"]
+polygon = PackedVector2Array(498, 603, 496, 518, 515, 518, 515, 604)
+
 [node name="StaticBody2D12" type="StaticBody2D" parent="CanvasLayer"]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D12"]
+polygon = PackedVector2Array(460, 389, 499, 389, 524, 413, 542, 414, 545, 331, 568, 331, 567, 416, 675, 417, 703, 390, 747, 390, 698, 439, 505, 440)
+
 [node name="StaticBody2D13" type="StaticBody2D" parent="CanvasLayer"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CanvasLayer/StaticBody2D13"]
+polygon = PackedVector2Array(453, 262, 512, 209, 693, 210, 747, 258, 754, 267, 705, 267, 669, 232, 661, 235, 661, 235, 661, 323, 635, 323, 636, 232, 533, 232, 497, 266)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
