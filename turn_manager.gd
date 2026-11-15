@@ -8,6 +8,9 @@ extends Node
 @onready var reset_btn: TextureButton = $CanvasLayer/ResetBtn
 @onready var timer_label: Label = $CanvasLayer/TimerLabel
 @onready var bounce_audio: AudioStreamPlayer2D = $Node2D/BounceAudio
+@onready var tag_sound: AudioStreamPlayer = $Node2D/TagSound
+@onready var reveal_sound: AudioStreamPlayer = $Node2D/RevealSound
+
 var current_turn: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
@@ -48,9 +51,14 @@ func _on_collision(body: Node) -> void:
 	print("Collision with ", body.name)
 	if body.name == "Player2":
 		player2_score += 1
+		
 	elif body.name == "Player1":
 		player1_score += 1
-	bounce_audio.play()
+		
+	if body.name == "Player1" || body.name == "Player2":
+		tag_sound.play()
+	else:
+		bounce_audio.play()
 	_update_score_display()
 	
 
@@ -60,12 +68,19 @@ func _update_score_display() -> void:
 	
 	if player1_score >= 10 or player2_score >= 10 or time_left <= 0.0:
 		set_process(false)
+		tag_sound.stop()
+		bounce_audio.stop()
 		if player1_score > player2_score:
 			texture_rect.texture = load("res://Assets/scores/redWinEndscreen.png")
+			reveal_sound.play()
 		elif player1_score < player2_score:
 			texture_rect.texture = load("res://Assets/scores/blueWinEndscreen.png")
+			reveal_sound.play()
 		else:
 			texture_rect.texture = load("res://Assets/scores/tieEndScreen.png")
+			
+			reveal_sound.play()
+			
 		player1.visible = false
 		player2.visible = false
 		p1_score_rect.visible = false 

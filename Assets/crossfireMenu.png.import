@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dokdtk2vv2n2u"
-path="res://.godot/imported/pixil-frame-0.png-ad73aed19b00fd55eeaf2db0cae8f8ff.ctex"
+uid="uid://gjq6mkwlc444"
+path="res://.godot/imported/crossfireMenu.png-0dbf232153809bc43658e8f69ff6b736.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-ad73aed19b00fd55eeaf2db0cae8f8ff.ctex"]
+source_file="res://Assets/crossfireMenu.png"
+dest_files=["res://.godot/imported/crossfireMenu.png-0dbf232153809bc43658e8f69ff6b736.ctex"]
 
 [params]
 

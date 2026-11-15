@@ -1,13 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=25 format=3 uid="uid://byilkgdbb2srd"]
 
-[ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
-[ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
-[ext_resource type="Script" path="res://player_script.gd" id="1_kwgtl"]
-[ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://Assets/red_ball.png" id="3_tu2t4"]
-[ext_resource type="AudioStream" uid="uid://r06jemplenvf" path="res://boing.mp3" id="5_5krnh"]
-[ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="5_notpk"]
-[ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="6_mesac"]
-[ext_resource type="Texture2D" uid="uid://bd3yevcg4mdw6" path="res://Assets/resetBtn.png" id="7_uxoy8"]
+[ext_resource type="Script" path="res://turn_manager.gd" id="1_pdtrr"]
+[ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://Assets/crossfire.png" id="2_inro6"]
+[ext_resource type="Script" path="res://player_script.gd" id="3_e0qhy"]
+[ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://Assets/red_ball.png" id="4_8m6da"]
+[ext_resource type="AudioStream" uid="uid://bhkhq04an0f5v" path="res://Assets/audio/cong.mp3" id="5_3mf86"]
+[ext_resource type="AudioStream" uid="uid://dsp4hqeh442b" path="res://Assets/audio/windows-95-ding-sound.mp3" id="6_slncw"]
+[ext_resource type="AudioStream" uid="uid://b2ypnc1nheyrk" path="res://Assets/audio/among-us-role-reveal-sound.mp3" id="7_3sgog"]
+[ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="8_x1sc8"]
+[ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="9_3f514"]
+[ext_resource type="Texture2D" uid="uid://bd3yevcg4mdw6" path="res://Assets/resetBtn.png" id="10_i1wql"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
 friction = 0.0
@@ -53,7 +55,7 @@ size = Vector2(16, 214)
 size = Vector2(300, 12)
 
 [node name="Node" type="Node"]
-script = ExtResource("1_gv6ur")
+script = ExtResource("1_pdtrr")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -61,7 +63,7 @@ script = ExtResource("1_gv6ur")
 texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_1pvmu")
+texture = ExtResource("2_inro6")
 
 [node name="Player2" type="RigidBody2D" parent="Node2D"]
 position = Vector2(110, 320)
@@ -71,7 +73,7 @@ physics_material_override = SubResource("PhysicsMaterial_xx3rc")
 gravity_scale = 0.0
 contact_monitor = true
 linear_damp = 1.0
-script = ExtResource("1_kwgtl")
+script = ExtResource("3_e0qhy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player2"]
 scale = Vector2(2, 2)
@@ -81,7 +83,7 @@ debug_color = Color(1, 1, 1, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Player2"]
 texture_filter = 1
 scale = Vector2(8, 8)
-texture = ExtResource("3_tu2t4")
+texture = ExtResource("4_8m6da")
 
 [node name="AimArrow" type="Line2D" parent="Node2D/Player2"]
 
@@ -93,7 +95,7 @@ physics_material_override = SubResource("PhysicsMaterial_xx3rc")
 gravity_scale = 0.0
 contact_monitor = true
 linear_damp = 1.0
-script = ExtResource("1_kwgtl")
+script = ExtResource("3_e0qhy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player1"]
 scale = Vector2(2, 2)
@@ -108,7 +110,15 @@ texture = SubResource("CompressedTexture2D_qqyse")
 [node name="AimArrow" type="Line2D" parent="Node2D/Player1"]
 
 [node name="BounceAudio" type="AudioStreamPlayer2D" parent="Node2D"]
-stream = ExtResource("5_5krnh")
+stream = ExtResource("5_3mf86")
+volume_db = 12.0
+
+[node name="TagSound" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("6_slncw")
+volume_db = 18.0
+
+[node name="RevealSound" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("7_3sgog")
 volume_db = 24.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -219,7 +229,7 @@ offset_left = 533.0
 offset_top = 265.0
 offset_right = 599.0
 offset_bottom = 371.0
-texture = ExtResource("5_notpk")
+texture = ExtResource("8_x1sc8")
 
 [node name="P2Score" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
@@ -227,7 +237,7 @@ offset_left = 612.0
 offset_top = 265.0
 offset_right = 678.0
 offset_bottom = 371.0
-texture = ExtResource("6_mesac")
+texture = ExtResource("9_3f514")
 
 [node name="ResetBtn" type="TextureButton" parent="CanvasLayer"]
 texture_filter = 1
@@ -235,7 +245,7 @@ offset_left = 1033.0
 offset_top = 59.0
 offset_right = 1083.0
 offset_bottom = 109.0
-texture_normal = ExtResource("7_uxoy8")
+texture_normal = ExtResource("10_i1wql")
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer"]
 offset_left = 592.0
