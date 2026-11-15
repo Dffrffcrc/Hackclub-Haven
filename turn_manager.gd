@@ -7,7 +7,7 @@ extends Node
 @onready var texture_rect: TextureRect = $Node2D/TextureRect
 @onready var reset_btn: TextureButton = $CanvasLayer/ResetBtn
 @onready var timer_label: Label = $CanvasLayer/TimerLabel
-
+@onready var bounce_audio: AudioStreamPlayer2D = $Node2D/BounceAudio
 var current_turn: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
@@ -45,11 +45,14 @@ func _on_turn_finished() -> void:
 	start_turn(2 if current_turn == 1 else 1)
 
 func _on_collision(body: Node) -> void:
+	print("Collision with ", body.name)
 	if body.name == "Player2":
 		player2_score += 1
 	elif body.name == "Player1":
 		player1_score += 1
+	bounce_audio.play()
 	_update_score_display()
+	
 
 func _update_score_display() -> void:
 	p1_score_rect.texture = load("res://Assets/scores/red%d.png" % clampi(player1_score, 0, 9)) if player1_score > -1 else null

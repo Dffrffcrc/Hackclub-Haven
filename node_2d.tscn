@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c4hqhd6lw12bs"]
+[gd_scene load_steps=23 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
 [ext_resource type="Script" path="res://player_script.gd" id="1_kwgtl"]
 [ext_resource type="Texture2D" uid="uid://nlkrc73k2ld2" path="res://Assets/red_ball.png" id="3_tu2t4"]
+[ext_resource type="AudioStream" uid="uid://r06jemplenvf" path="res://boing.mp3" id="5_5krnh"]
 [ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="5_notpk"]
 [ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="6_mesac"]
 [ext_resource type="Texture2D" uid="uid://bd3yevcg4mdw6" path="res://Assets/resetBtn.png" id="7_uxoy8"]
@@ -105,6 +106,10 @@ scale = Vector2(8, 8)
 texture = SubResource("CompressedTexture2D_qqyse")
 
 [node name="AimArrow" type="Line2D" parent="Node2D/Player1"]
+
+[node name="BounceAudio" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource("5_5krnh")
+volume_db = 24.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
