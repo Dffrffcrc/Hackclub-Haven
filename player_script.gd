@@ -2,7 +2,7 @@ extends RigidBody2D
 
 signal turn_finished
 signal collided(body: Node)
-
+signal picked_up_dice(body: RigidBody2D)
 @export var launch_power: float = 35.0
 @export var max_arrow_length: float = 300.0
 @export var stop_threshold: float = 20.0 # Speed below which the ball counts as stopped
@@ -15,7 +15,6 @@ var is_dragging: bool = false
 var can_drag: bool = false
 var is_moving: bool = false
 var speed_multiplier: float = 1.0
-
 @onready var aim_arrow: Line2D = $AimArrow
 
 func _ready() -> void:
@@ -29,6 +28,7 @@ func _ready() -> void:
 	aim_arrow.add_point(Vector2.ZERO)
 	aim_arrow.add_point(Vector2.ZERO)
 	body_entered.connect(_on_body_entered)
+	
 
 func _on_body_entered(body: Node) -> void:
 	print("Collided")

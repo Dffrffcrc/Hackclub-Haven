@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://byilkgdbb2srd"]
+[gd_scene load_steps=24 format=3 uid="uid://byilkgdbb2srd"]
 
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://pixil-frame-0.png" id="1_1pvmu"]
 [ext_resource type="Script" path="res://turn_manager.gd" id="1_gv6ur"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6f0ctnpjp7o5" path="res://Assets/scores/red0.png" id="5_notpk"]
 [ext_resource type="Texture2D" uid="uid://gcj0qa6pngtq" path="res://Assets/scores/blue0.png" id="6_mesac"]
 [ext_resource type="Texture2D" uid="uid://bd3yevcg4mdw6" path="res://Assets/resetBtn.png" id="7_uxoy8"]
+[ext_resource type="PackedScene" uid="uid://dsn5tju4cg230" path="res://item_spawner.tscn" id="9_y6s3a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xx3rc"]
 friction = 0.0
@@ -242,3 +243,5 @@ offset_left = 592.0
 offset_top = 381.0
 offset_right = 632.0
 offset_bottom = 404.0
+
+[node name="ItemSpawner" parent="." instance=ExtResource("9_y6s3a")]
