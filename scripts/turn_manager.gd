@@ -13,7 +13,7 @@ extends Node
 var current_turn: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
-var time_left: float = 30.0
+var time_left: float = 90.0
 var texture_rect: TextureRect
 func _ready() -> void:
 	if Global.selected_map_path != "":

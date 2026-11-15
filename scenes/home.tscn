@@ -28,18 +28,17 @@ texture = ExtResource("2_a0ge0")
 [node name="breakpointButton" type="TextureButton" parent="background"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -57.0
-offset_top = 191.0
-offset_right = 503.0
-offset_bottom = 573.0
+offset_left = -8.0
+offset_top = 189.0
+offset_right = 374.0
+offset_bottom = 576.0
 texture_normal = ExtResource("3_pv6oh")
 ignore_texture_size = true
 stretch_mode = 5
-metadata/_edit_group_ = true
 
 [node name="Breakpoint" type="Sprite2D" parent="background/breakpointButton"]
 texture_filter = 1
-position = Vector2(278, 191)
+position = Vector2(199, 190)
 scale = Vector2(1.56, 1.26)
 texture = ExtResource("4_vcihi")
 
@@ -53,7 +52,6 @@ offset_bottom = 576.0
 texture_normal = ExtResource("5_suqe3")
 ignore_texture_size = true
 stretch_mode = 5
-metadata/_edit_group_ = true
 
 [node name="Duality" type="Sprite2D" parent="background/dualityButton"]
 texture_filter = 1
@@ -64,17 +62,17 @@ texture = ExtResource("6_r5gtg")
 [node name="crossfireButton" type="TextureButton" parent="background"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 565.0
-offset_top = 188.0
-offset_right = 1283.0
-offset_bottom = 579.0
+offset_left = 780.0
+offset_top = 247.0
+offset_right = 867.0
+offset_bottom = 312.0
+scale = Vector2(4, 4)
 texture_normal = ExtResource("7_6161w")
 ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 3
 
 [node name="Crossfire" type="Sprite2D" parent="background/crossfireButton"]
 texture_filter = 1
-position = Vector2(360, 196)
-scale = Vector2(1.58667, 1.24)
+position = Vector2(45.75, 32.25)
+scale = Vector2(0.4, 0.313)
 texture = ExtResource("8_517en")
-metadata/_edit_group_ = true
