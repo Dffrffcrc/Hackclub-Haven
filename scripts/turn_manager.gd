@@ -10,18 +10,18 @@ extends Node
 @onready var bounce_audio: AudioStreamPlayer2D = $Node2D/BounceAudio
 @onready var tag_sound: AudioStreamPlayer = $Node2D/TagSound
 @onready var reveal_sound: AudioStreamPlayer = $Node2D/RevealSound
-
+@onready var game_world: Node2D = $Node2D
 var current_turn: int = 1
 var player1_score: int = 0
 var player2_score: int = 0
 var time_left: float = 90.0
 
 func _ready() -> void:
-	#testing:
-	for child in $CanvasLayer.get_children():
-		if child.name.begins_with("inner"):
-			child.collision_layer = 1
-		
+	if Global.selected_map_path != "":
+		var map_scene: PackedScene = load(Global.selected_map_path)
+		var map_instance: Node = map_scene.instantiate()
+		game_world.add_child(map_instance)
+		game_world.move_child(map_instance, 0)
 	player1.turn_finished.connect(_on_turn_finished)
 	player2.turn_finished.connect(_on_turn_finished)
 	player1.collided.connect(_on_collision)
