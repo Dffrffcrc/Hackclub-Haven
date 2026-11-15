@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://br13bfga3cm8n"]
+[gd_scene load_steps=10 format=3 uid="uid://br13bfga3cm8n"]
 
 [ext_resource type="Script" path="res://scripts/home.gd" id="1_2s776"]
 [ext_resource type="Texture2D" uid="uid://blsew7em5eu2w" path="res://Assets/homescreenBg.png" id="2_a0ge0"]
 [ext_resource type="Texture2D" uid="uid://cqwpy06syvbuo" path="res://Assets/breakpointMenu.png" id="3_pv6oh"]
-[ext_resource type="Texture2D" uid="uid://s26nb7aanl0k" path="res://Assets/breakpoint.jpeg" id="4_vcihi"]
+[ext_resource type="Texture2D" uid="uid://ccd2gxjux12oh" path="res://Assets/breakpoint_header.png" id="4_pskn6"]
 [ext_resource type="Texture2D" uid="uid://l3ubefo86i08" path="res://Assets/dualityMenu.png" id="5_suqe3"]
-[ext_resource type="Texture2D" uid="uid://cgmlbxh1fkdbm" path="res://Assets/duality.jpeg" id="6_r5gtg"]
+[ext_resource type="Texture2D" uid="uid://7edxu36i8h88" path="res://Assets/duality_header.png" id="6_fumg7"]
 [ext_resource type="Texture2D" uid="uid://gjq6mkwlc444" path="res://Assets/crossfireMenu.png" id="7_6161w"]
 [ext_resource type="Texture2D" uid="uid://dokdtk2vv2n2u" path="res://Assets/crossfire.png" id="8_517en"]
+[ext_resource type="AudioStream" uid="uid://cru7w38pk7v35" path="res://Assets/retro_music.mp3" id="9_crayq"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -38,9 +39,9 @@ stretch_mode = 5
 
 [node name="Breakpoint" type="Sprite2D" parent="background/breakpointButton"]
 texture_filter = 1
-position = Vector2(199, 190)
-scale = Vector2(1.56, 1.26)
-texture = ExtResource("4_vcihi")
+position = Vector2(185, 192)
+scale = Vector2(0.0722959, 0.079281)
+texture = ExtResource("4_pskn6")
 
 [node name="dualityButton" type="TextureButton" parent="background"]
 texture_filter = 1
@@ -55,9 +56,9 @@ stretch_mode = 5
 
 [node name="Duality" type="Sprite2D" parent="background/dualityButton"]
 texture_filter = 1
-position = Vector2(197, 196)
-scale = Vector2(1.55333, 1.26)
-texture = ExtResource("6_r5gtg")
+position = Vector2(191, 194)
+scale = Vector2(0.0762195, 0.085211)
+texture = ExtResource("6_fumg7")
 
 [node name="crossfireButton" type="TextureButton" parent="background"]
 texture_filter = 1
@@ -76,3 +77,8 @@ texture_filter = 1
 position = Vector2(45.75, 32.25)
 scale = Vector2(0.4, 0.313)
 texture = ExtResource("8_517en")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_crayq")
+volume_db = 24.0
+autoplay = true

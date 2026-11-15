@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bt7snmbaloigv"]
+[gd_scene load_steps=7 format=3 uid="uid://dxywm5mfwi4cn"]
 
 [ext_resource type="Texture2D" uid="uid://x5lhu61nx5j4" path="res://Assets/breakpoint.png" id="1_vgxmj"]
 
@@ -41,7 +41,7 @@ polygon = PackedVector2Array(592, 75, 632, 75, 679, 96, 690, 134, 671, 177, 632,
 [node name="StaticBody2D3" type="StaticBody2D" parent="CanvasLayer"]
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="CanvasLayer/StaticBody2D3"]
-position = Vector2(1151, 319)
+position = Vector2(1133, 323)
 shape = SubResource("RectangleShape2D_abs0l")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="CanvasLayer"]
@@ -107,6 +107,6 @@ shape = SubResource("RectangleShape2D_0rw40")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 1170.0
+offset_right = 1151.0
 offset_bottom = 647.0
 texture = ExtResource("1_vgxmj")
